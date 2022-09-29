@@ -6,15 +6,15 @@
 /*   By: edelage <edelage@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:16:52 by edelage           #+#    #+#             */
-/*   Updated: 2022/09/29 12:44:24 by edelage          ###   ########lyon.fr   */
+/*   Updated: 2022/09/29 16:46:13 by edelage          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_GC_H
 # define FT_GC_H
-#include <stdlib.h>
+# include <stdlib.h>
 
-typedef struct s_list t_list;
+typedef struct s_list	t_list;
 struct	s_list
 {
 	void	*ptr;
