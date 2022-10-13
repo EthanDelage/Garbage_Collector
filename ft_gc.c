@@ -6,7 +6,7 @@
 /*   By: edelage <edelage@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:16:37 by edelage           #+#    #+#             */
-/*   Updated: 2022/09/29 17:31:49 by edelage          ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 12:22:53 by tdameros         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_gc.h"
@@ -62,15 +62,15 @@ void	gc_free(void *ptr, t_list *start)
 void	gc_free_all(t_list **start)
 {
 	t_list	*elem;
-	t_list	*elem_free;
+	t_list	*elem_next;
 
-	elem = start[0]->next;
-	free(start[0]);
+	elem = *start;
 	while (elem)
 	{
-		elem_free = elem;
-		elem = elem->next;
-		free(elem_free->ptr);
-		free(elem_free);
+		elem_next = elem->next;
+		free(elem->ptr);
+		free(elem);
+		elem = elem_next;
 	}
+	*start = NULL;
 }
